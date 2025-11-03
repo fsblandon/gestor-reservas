@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lugar {
+  id        Int       @id @default(autoincrement())
+  nombre    String
+  ubicacion String
+  espacios  Espacio[]
+}
+
+model Espacio {
+  id          Int       @id @default(autoincrement())
+  nombre      String
+  capacidad   Int
+  referencia  String?
+  descripcion String?
+  lugarId     Int
+  lugar       Lugar     @relation(fields: [lugarId], references: [id])
+  reservas    Reserva[]
+}
+
+model Reserva {
+  id              Int      @id @default(autoincrement())
+  espacioId       Int
+  espacio         Espacio  @relation(fields: [espacioId], references: [id])
+  emailCliente    String
+  fechaDeReserva  DateTime
+  horaInicio      String
+  horaFin         String
+}
