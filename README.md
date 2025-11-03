@@ -15,19 +15,14 @@ Permite levantar **base de datos, backend y frontend** de forma completa con un 
 ---
 
 ## 📂 Estructura del proyecto
-gestor-reservas/
-├─ apps/
-│ ├─ api/ # Backend Node.js + Prisma
-│ └─ web/ # Frontend React + Vite
-├─ docker-compose.yml
-├─ README.md
+Es un Monorepo llamado gestor-reservas, dentro encuentas la carpeta apps, y dentro de estas el Backend (api) y el Frontend (web).
 
 ## ⚡ Levantar el proyecto
 
 1. Clona el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/fsblandon/gestor-reservas
 cd gestor-reservas
 ```
 
@@ -53,7 +48,9 @@ VALUES ('Sala de reuniones A', 10, 'Espacio principal de reuniones', 1);
 
 4. Accede al frontend desde tu navegador:
 
+```bash
 http://localhost:5173
+```
 
 ## Base de datos
 
